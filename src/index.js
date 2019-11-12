@@ -12,6 +12,7 @@ const defaultOptions = {
   compress: 'gzip',
   path: process.cwd(),
   file: 'http.log',
+  // Express format of input parameters, cause 'morgan' itself belongs to Express, not Koa
   skip: (_, response) => response.statusCode < 400
 };
 
@@ -23,10 +24,10 @@ module.exports = options => {
   );
 
   const { file, skip, ...rfsOptions } = _options;
-  if (!file || typeof file !== 'string') throw new TypeError('invalid log file name');
+  if (!file || typeof file !== 'string') throw new TypeError('Invalid log file name');
 
   const { path } = rfsOptions;
-  if (!path || typeof path !== 'string') throw new TypeError('invalid path to logs');
+  if (!path || typeof path !== 'string') throw new TypeError('Invalid path to logs');
 
   fs.existsSync(path) || mkdirp.sync(path);
 
