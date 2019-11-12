@@ -34,5 +34,5 @@ module.exports = options => {
     skip: typeof skip === 'function' ? skip : null
   };
 
-  return morgan('combined', _options);
+  return morgan('combined', settings);
 };
