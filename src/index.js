@@ -3,9 +3,6 @@ const mkdirp = require('mkdirp');
 const morgan = require('koa-morgan');
 const rfs = require('rotating-file-stream');
 
-const isProduction = process.env.NODE_ENV === 'production';
-const skipSuccessed = isProduction && false;
-
 const defaultOptions = {
   size: '16M',
   interval: '1d',
