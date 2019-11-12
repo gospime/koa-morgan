@@ -16,15 +16,17 @@ const defaultOptions = {
 };
 
 module.exports = options => {
-  const rfsOptions = Object.assign(
+  const _options = Object.assign(
     {},
     defaultOptions,
     options || {}
   );
 
-  const { path, file, skip } = rfsOptions;
-  if (!path || typeof path !== 'string') throw new TypeError('invalid path to logs');
+  const { file, skip, ...rfsOptions } = _options;
   if (!file || typeof file !== 'string') throw new TypeError('invalid log file name');
+
+  const { path } = rfsOptions;
+  if (!path || typeof path !== 'string') throw new TypeError('invalid path to logs');
 
   fs.existsSync(path) || mkdirp.sync(path);
 
