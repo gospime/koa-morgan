@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.5](https://github.com/gospime/koa-morgan/compare/v1.1.4...v1.1.5) (2020-03-21)
+
 ### [1.1.4](https://github.com/gospime/koa-morgan/compare/v1.1.3...v1.1.4) (2019-11-12)
 
 
